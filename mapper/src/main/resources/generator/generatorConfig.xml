@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+            PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+                "http://mybatis.org/dtd/mybatis-generator-config_10.dtd">
+<generatorConfiguration>
+    <!--引人数据库连接配置-->
+    <!--<properties resource= "jdbc.properties"/>-->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat" >
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!--配置GeneralMapper 生成所有的DAO默认继承GeneratorDAO-->
+        <plugin type= "tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value= "com.cj.jerryShop.general.GeneratorDAO"/>
+        </plugin>
+        <!--配置数据库连接-->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/jerryShop?characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false"
+                userId="root"
+                password="root">
+        </jdbcConnection>
+
+        <!-- 配置实体类存放路径-->
+        <javaModelGenerator targetPackage="com.cj.jerryShop.entity" targetProject="src/main/java"/>
+        <!--配置XML存放路径-->
+        <sqlMapGenerator targetPackage="/" targetProject="src/main/resources/mappers"/>
+        <!--配置DAO存放路径-->
+        <javaClientGenerator targetPackage="com.cj.jerryShop.dao" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!--配置需要指定生成的数据库和表，%代表所有表-->
+        <table tableName="%">
+            <!-- mysql配置-->
+            <!--
+            <generatedKey column=" id" sqlStatement= "Mysq1" identity="true"/>-->
+        </table>
+        <!--<table tableName="tb_ roles">-->
+        <!--&lt;! &ndash; mysql 配置&ndash;&gt;-->
+        <!--<generatedKey column=" roleid" sqlStatement= ”Mysql" identity="true" />-->
+        <!--</table>-->
+        <!--<table tableName= " tb_ pe rmissions">-->
+        <!--&It;!&ndash; mysql 配置&ndash;&gt;-->
+        <!--<generatedKey column="perid" sqlStatement="Mysq1" identity="true"/>-->
+        <!--</table>-->
+        </context>
+
+</generatorConfiguration>
