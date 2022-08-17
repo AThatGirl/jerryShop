@@ -2,12 +2,6 @@ package com.cj.jerryShop.controller;
 
 import com.cj.jerryShop.staticVariable.AboutResultVO;
 import com.cj.jerryShop.vo.ResultVO;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwtParser;
-import io.jsonwebtoken.Jwts;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

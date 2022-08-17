@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
                 Users user = new Users();
                 user.setUsername(name);
                 user.setPassword(md5Pwd);
-                user.setUserImg("images/default.png");
+                user.setUserImg("static/images/default.png");
                 user.setUserRegtime(new Date());
                 user.setUserModtime(new Date());
                 //UseGeneratedKeys表示使用主键回填，下面返回的user会有主键值
@@ -104,6 +104,7 @@ public class UserServiceImpl implements UserService {
                         .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))//设置token过期时间
                         .signWith(SignatureAlgorithm.HS256, "jerry273k")//设置加密方式和加密密码
                         .compact();
+
 
                 return new ResultVO(AboutResultVO.RESULT_VO_SUCCEED_CODE,token,users.get(0));
             }else {
