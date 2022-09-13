@@ -6,4 +6,6 @@ public interface CategoryService {
 
     public ResultVO queryAllCategory();
 
+    public ResultVO queryFirstLevelCategories();
+
 }

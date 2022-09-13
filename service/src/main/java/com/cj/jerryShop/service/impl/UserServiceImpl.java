@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
      * 检查登录
      *
      * @param name 名字
-     * @param pwd  松材线虫病
+     * @param pwd  密码
      * @return {@link Users}
      */
     @Override
@@ -85,7 +85,6 @@ public class UserServiceImpl implements UserService {
         Example.Criteria criteria=example.createCriteria();
         criteria.andEqualTo("username",name);
         List<Users> users = usersMapper.selectByExample(example);
-
         if (users.size()==0){
             return new ResultVO(AboutResultVO.RESULT_VO_FAIL_CODE,"登录失败，用户名不存在！",null);
         }else {

@@ -16,4 +16,7 @@ public interface CategoryMapper extends GeneratorDAO<Category> {
     //子查询，无论多少级都可以查到
     public List<CategoryVO> selectAllCategories2(Integer parentId);
 
+    //查询一级类别
+    public List<CategoryVO> selectFirstLevelCategories();
+
 }

@@ -12,5 +12,12 @@ public interface ProductMapper extends GeneratorDAO<Product> {
 
     public List<ProductVO> selectRecommendProducts();
 
+    /**
+     * 查询指定一级类别下销量最高的6个商品
+     *
+     * @param cid cid
+     * @return {@link List}<{@link ProductVO}>
+     */
+    public List<ProductVO> selectTop6ByCategory(int cid);
 
 }
